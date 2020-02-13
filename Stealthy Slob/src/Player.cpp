@@ -65,7 +65,8 @@ void Player::drawLamp()
 
 void Player::getLampPos(int x, int y)
 {
-	lampPos = getPosition() + (lightDistance * Util::normalize(glm::vec2(x - getPosition().x, y - getPosition().y)));
+	glm::vec2 spawnPos = glm::vec2(getPosition().x - getWidth() / 2, getPosition().y - getHeight()/2);
+	lampPos = spawnPos + (lightDistance * Util::normalize(glm::vec2(x - getPosition().x, y - getPosition().y)));
 	std::cout << "lampPos is " << lampPos.x << " " << lampPos.y << std::endl;
 	std::cout << "player Pos is " << getPosition().x << " " << getPosition().y << std::endl;
 }
