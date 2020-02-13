@@ -21,7 +21,7 @@ public:
 	void getLampPos(int x, int y);
 	void drawLamp();
 	glm::vec2 mousePos;
-	const float lightDistance = 100.0f;
+	const float lightDistance = 10.0f;
 private:
 	bool m_isAlive;
 	glm::vec2 lampPos = glm::vec2(0, 0);

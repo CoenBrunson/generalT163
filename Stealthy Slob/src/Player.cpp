@@ -15,7 +15,6 @@ Player::Player()
 	setHeight(size.y);
 	setIsColliding(false);
 	setType(GameObjectType::PLAYER);
-	mousePos = glm::vec2(0.0f, 0.0f);
 }
 
 Player::~Player()
@@ -66,7 +65,7 @@ void Player::drawLamp()
 
 void Player::getLampPos(int x, int y)
 {
-	lampPos = lightDistance * Util::normalize(glm::vec2(x - getPosition().x, y - getPosition().y));
+	lampPos = getPosition() + (lightDistance * Util::normalize(glm::vec2(x - getPosition().x, y - getPosition().y)));
 	std::cout << "lampPos is " << lampPos.x << " " << lampPos.y << std::endl;
 	std::cout << "player Pos is " << getPosition().x << " " << getPosition().y << std::endl;
 }

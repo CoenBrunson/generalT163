@@ -135,9 +135,10 @@ void Level::draw(SDL_Renderer* m_pRenderer)
 	{
 		m_pEnemies[i]->draw();
 	}
-	if (m_player->heartBeatCheck())
+	if (m_player->heartBeatCheck()) {
 		m_player->draw();
 		m_player->drawLamp();
+	}
 }
 
 bool Level::checkPlayerBounds()
